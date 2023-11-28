@@ -23,12 +23,40 @@ public class DistributeRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
+        // from(String.format("jms:queue:%s",queue_in))
+        //     .log("Received a message - ${body} - sending to end Distribute")
+        //     .unmarshal(formatRpta)
+        //     .process(new DistributeProcessor())
+        //     .marshal(formatRpta)
+        // .to(String.format("jms:queue:%s",queue_out));
+
+
         from(String.format("jms:queue:%s",queue_in))
             .log("Received a message - ${body} - sending to end Distribute")
             .unmarshal(formatRpta)
             .process(new DistributeProcessor())
             .marshal(formatRpta)
         .to(String.format("jms:queue:%s",queue_out));
+
+        // restConfiguration()
+        // .component("platform-http")
+        // .host("0.0.0.0")
+        // .port(8091);
+    
+        // rest("/receptor")
+        //     .post("/mensaje")
+        //     .to("direct:procesarMensaje");
+        
+        // from("direct:procesarMensaje")
+        //     .log("Received a message - ${body} - sending to end Distribute")
+        //     .unmarshal(formatRpta)
+        //     .log("Received a message - ${body} - sending to end Distribute1")
+        //     .process(new DistributeProcessor())
+        //     .log("Received a message - ${body} - sending to end Distribute2")
+        //     .marshal(formatRpta)
+        //     .log("Received a message - ${body} - sending to end Distribute3")
+        //     //.to(String.format("jms:queue:%s",queue_out));
+        //     .to("jms:queue:DEV.QUEUE.SUNAT");
     }
 
 }

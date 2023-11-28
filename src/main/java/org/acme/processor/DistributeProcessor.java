@@ -19,5 +19,6 @@ public class DistributeProcessor implements Processor{
         System.out.println("Distribute: "+resp.respuesta);
         
         exchange.getIn().setBody(mapper.toString(resp));
+        //exchange.getIn().setBody("00020128000000023000                      0000000002RENIECPERURENIECDE2116    RENIEC001 0000INS00070600648  HOST000000          0001");
     }
 }

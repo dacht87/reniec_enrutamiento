@@ -53,6 +53,7 @@ public class ApplicationContext {
             factory.setStringProperty(WMQConstants.USERID, this.user);
             factory.setStringProperty(WMQConstants.PASSWORD, this.password);
             factory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
+            factory.setIntProperty(JmsConstants.JMS_IBM_ENCODING, WMQConstants.WMQ_ENCODING_NATIVE);
         } catch (JMSException je) {
             throw je;
         }
