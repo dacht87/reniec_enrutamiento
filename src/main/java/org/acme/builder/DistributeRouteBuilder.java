@@ -16,12 +16,6 @@ public class DistributeRouteBuilder extends RouteBuilder {
 
     private JacksonDataFormat formatRpta=new JacksonDataFormat(Respuesta.class);
 
-    // @ConfigProperty(name = "app.jms.queue-processed")
-    // private String queue_in;
-
-    // @ConfigProperty(name = "app.jms.queue-end")
-    // private String queue_out;
-
     @ConfigProperty(name = "app.camel.rest.host.distribute")
     private String host_dist;
 
@@ -33,13 +27,7 @@ public class DistributeRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        // from(String.format("jms:queue:%s",queue_in))
-        //     .log("Received a message - ${body} - sending to end Distribute")
-        //     .unmarshal(formatRpta)
-        //     .process(new DistributeProcessor())
-        //     .marshal(formatRpta)
-        // .to(String.format("jms:queue:%s",queue_out));
-
+     
         restConfiguration()
         .component("platform-http")
         .host(host_dist)
