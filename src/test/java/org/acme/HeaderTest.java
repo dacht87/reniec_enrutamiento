@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         header.tipoServicio = "ABC";
         header.longTotalTrama = "987654321";
         header.fragmentacion = "0123456789012345678901";
-        header.TTL = "999999999";
+        header.ttl = "999999999";
         header.tipoConsulta = "A";
         header.caractVerif = "0123456789ABCDEF";
         header.codInstitucion = "9876543210";
