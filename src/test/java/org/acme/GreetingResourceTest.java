@@ -1,17 +1,18 @@
-// package org.acme;
+package org.acme;
+import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Test;
+import org.acme.bindy.ftp.Persona;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// import io.quarkus.test.junit.QuarkusTest;
-// import org.junit.jupiter.api.Test;
+@QuarkusTest
+public class GreetingResourceTest {
 
-// import static io.restassured.RestAssured.given;
-// import static org.hamcrest.CoreMatchers.is;
+@Test
+public void testHelloEndpoint() {
 
-// @QuarkusTest
-// public class GreetingResourceTest {
+}
 
-//     @Test
-//     public void testHelloEndpoint() {
-        
-//     }
 
-// }
+}
