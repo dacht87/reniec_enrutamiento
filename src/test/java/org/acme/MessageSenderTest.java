@@ -12,20 +12,27 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 
  class MessageSenderTest {
-    @Mock
-    private ProducerTemplate producerTemplate;
+     @Mock
+// Se crea un mock para la interfaz ProducerTemplate, que se utilizará en las pruebas
+     private ProducerTemplate producerTemplate;
 
-    @InjectMocks
-    private MessageSender messageSender;
+     @InjectMocks
+// Se inyectan los mocks en la instancia de la clase MessageSender para que puedan ser utilizados en las pruebas
+     private MessageSender messageSender;
 
-    @ConfigProperty(name = "app.jms.queue-end")
-    private String queue_out;
+     @ConfigProperty(name = "app.jms.queue-end")
+// Se obtiene el valor de la propiedad "app.jms.queue-end" desde la configuración
+     private String queue_out;
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.openMocks(this);
-        messageSender.setQueueOut(queue_out);
-    }
+     @BeforeEach
+// Método que se ejecuta antes de cada prueba para realizar la configuración inicial
+     void setUp() {
+         // Inicialización de los mocks y la instancia de la clase MessageSender
+         MockitoAnnotations.openMocks(this);
+
+         // Configuración del valor de la cola de salida en la instancia de MessageSender
+         messageSender.setQueueOut(queue_out);
+     }
 
     @Test
     void testEnviarMensajeACola() {
