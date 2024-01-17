@@ -9,10 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @QuarkusTest
 public class GreetingResourceTest {
 
-@Test
-public void testHelloEndpoint() {
-
-}
 
 
 }

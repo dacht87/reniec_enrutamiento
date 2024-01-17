@@ -21,28 +21,39 @@ public class ApplicationContext {
     // Propiedad de configuración para el host de JMS
     @ConfigProperty(name = "app.jms.host")
     private String host;
-
+    public void setHost(String host) {
+        this.host = host;
+    }
     // Propiedad de configuración para el puerto de JMS
     @ConfigProperty(name = "app.jms.port")
     private int port;
-
+    public void setPort(int port) {
+        this.port = port;
+    }
     // Propiedad de configuración para el canal de JMS
     @ConfigProperty(name = "app.jms.channel")
     private String channel;
-
+    public void setChannel(String channel) {
+        this.channel= channel;
+    }
     // Propiedad de configuración para el administrador de colas de JMS
     @ConfigProperty(name = "app.jms.queuemgr")
     private String queuemgr;
-
+    public void setQueuemgr(String queuemgr) {
+        this.queuemgr= queuemgr;
+    }
     // Propiedad de configuración para el usuario de JMS
     @ConfigProperty(name = "app.jms.user")
     private String user;
-
+    public void setUser(String user) {this.user= user;
+    }
     // Propiedad de configuración para la contraseña de JMS
 
     @ConfigProperty(name = "app.jms.password")
     private String password;
-
+    public void setPassword(String password) {
+        this.password= password;
+    }
     // Método de producción (producer method) que crea y retorna una ConnectionFactory
     @Produces
     @Default
@@ -109,4 +120,5 @@ public class ApplicationContext {
             throw new JMSException("Error al crear el componente JMS");
         }
     }
+//
 }
