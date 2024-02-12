@@ -44,7 +44,6 @@ public class DistributeRouteBuilder extends RouteBuilder {
 
         // Definición de la ruta de procesamiento direct:procesarMensaje
         from("direct:procesarMensaje")
-                .log("Received a message - ${body} - sending to end Distribute")  // Registrar un mensaje en el log
                 .unmarshal(formatRpta)  // Deserializar el cuerpo del mensaje utilizando el formato especificado por formatRpta
                 .process(new DistributeProcessor(messageSender));  // Procesar el mensaje utilizando la clase DistributeProcessor
         }

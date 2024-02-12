@@ -23,14 +23,9 @@ public class DistributeProcessor implements Processor{
     // Método de la interfaz Processor que realiza el procesamiento de un intercambio (Exchange)
     @Override
     public void process(Exchange exchange) throws Exception {
-        // Imprime un mensaje en la consola
-        System.out.println("Distribute: ");
 
         // Obtiene el objeto Respuesta del cuerpo del intercambio
         Respuesta resp = exchange.getIn().getBody(Respuesta.class);
-
-        // Imprime información sobre la respuesta obtenida
-        System.out.println("Distribute: " + resp.respuesta);
 
         // Convierte el objeto Respuesta a su representación en cadena y establece el cuerpo del intercambio
         exchange.getIn().setBody(mapper.toString(resp));
